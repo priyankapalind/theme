@@ -1,12 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "ESNext",
-    "strict": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "target": "ES5",                    // Targeting ES5 for compatibility
+    "module": "ESNext",                  // Use the latest module system (ES Modules)
+    "strict": true,                      // Enable all strict type-checking options
+    "jsx": "react-jsx",                  // JSX Transformation
+    "moduleResolution": "node",          // Resolve modules using Node.js rules
+    "esModuleInterop": true,             // Allow default imports from modules with no default export
+    "skipLibCheck": true,                // Skip type checking of declaration files
+    "outDir": "./dist",                  // Output compiled files to the "dist" folder
+    "rootDir": "./src",                  // Input source files are in the "src" folder
+    "declaration": true,                 // Generate .d.ts declaration files
+    "declarationMap": true,              // Generate source maps for declaration files
+    "sourceMap": true                    // Generate source maps for debugging
   },
-  "include": ["src"]
-}  
+  "include": [
+    "src/**/*"                           // Include all files in the "src" directory
+  ]
+}
