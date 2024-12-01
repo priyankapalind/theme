@@ -25,7 +25,13 @@ RUN if ! getent group $GROUP_ID > /dev/null 2>&1; then \
         adduser -D -u $USER_ID -G $(getent group $GROUP_ID | cut -d: -f1) appuser; \
     fi
 
-# Switch to the new user
+# Switch to root user to set permissions
+USER root
+
+# Apply the correct file ownership to the /app directory (set it for appuser)
+RUN chown -R $USER_ID:$GROUP_ID /app
+
+# Switch to the appuser for normal operation
 USER $USER_ID
 
 # Expose the port the app runs on
